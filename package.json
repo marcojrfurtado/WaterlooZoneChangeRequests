@@ -1,0 +1,22 @@
+{
+  "name": "zonechanges",
+  "version": "1.0.0",
+  "description": "npm i jsonframe-cheerio --save",
+  "main": "index.js",
+  "directories": {
+    "lib": "lib",
+    "test": "test"
+  },
+  "dependencies": {
+    "cheerio": "^1.0.0-rc.3",
+    "jsonframe-cheerio": "^3.0.1",
+    "request": "^2.88.0"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "node test/printWaterlooZoneChanges.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC"
+}
