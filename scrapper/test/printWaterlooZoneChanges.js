@@ -1,6 +1,6 @@
 const zoneChanges = require('../lib/waterlooZoneChanges')
 zoneChanges.getZoneChangeRequests().then( (result) => {
-    console.log(result)
+    console.log(JSON.stringify(result))
 }).catch( (error) => {
     console.error("An issue has occurred, details: "+error)
 })

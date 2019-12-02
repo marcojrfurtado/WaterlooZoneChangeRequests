@@ -4,7 +4,7 @@ const jsonframe = require('jsonframe-cheerio')
 
 const WATERLOO_ZONE_CHANGES_URL = 'https://www.waterloo.ca/en/government/zone-changes.aspx'
 
-const GOOGLE_MAPS_URL_COORDS_REGEX = /\@(?<latitude>(\-)?[0-9]+\.[0-9]+)\,(?<longitude>(\-)?[0-9]+\.[0-9]+)/
+const GOOGLE_MAPS_URL_COORDS_REGEX = /\!3d(?<latitude>(\-)?[0-9]+\.[0-9]+)\!4d(?<longitude>(\-)?[0-9]+\.[0-9]+)/
 
 const frame = {
     "zoneChangeInformation" : {
