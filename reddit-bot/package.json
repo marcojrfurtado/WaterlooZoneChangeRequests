@@ -1,0 +1,17 @@
+{
+  "name": "waterloo-zone-changes-bot",
+  "version": "1.0.0",
+  "description": "npm i jsonframe-cheerio --save",
+  "main": "index.js",
+  "dependencies": {
+    "snoowrap": "1.20.1",
+    "axios": "^0.19.0"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "start": "node bot.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC"
+}

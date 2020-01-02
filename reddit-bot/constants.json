@@ -1,0 +1,5 @@
+{
+    "subreddit": "WaterlooZoneChanges",
+    "backendUrl": "http://localhost:3001",
+    "intervalMinutes": 10
+}
