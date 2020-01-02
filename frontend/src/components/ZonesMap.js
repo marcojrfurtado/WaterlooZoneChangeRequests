@@ -5,16 +5,18 @@ import InformationDialog from './InformationDialog'
 import UnpinnedZoneChangeTable from './UnpinnedZoneChangeTable'
 import { Grid } from '@material-ui/core'
 import { withStyles } from '@material-ui/core/styles';
-
-// TODO: Remove this static test data once we have a backend to store scrapper data
-import zoneRequestsData from '../data/zoneChangeRequestsTestData'
+import fetchData from '../utils/fetchData'
 
 const cityOfWaterlooCoordinates = [43.4802042,-80.53831]
 
 const styles = theme => ({
-  unpinnedTable: {
-    maxWidth: 300,
+  unpinnedTableContainer: {
+    maxWidth: "20%",
     fontSize: 24,
+  },
+  mapContainer: {
+    minWidth: "800px",
+    minHeight: "600px"
   }
 });
 
@@ -23,8 +25,24 @@ class ZonesMap extends Component {
   constructor(props) {
     super(props)
     this.state = {
-      zoneInformationDialog: undefined
+      zoneInformationDialog: undefined,
+      zoneRequestsData: []
     }
+    this.fetchDataFromBackend()
+  }
+
+  fetchDataFromBackend = () => {
+    fetchData()
+    .then( (fetchedZoneRequestData) => {
+      this.setState({
+        zoneRequestsData: fetchedZoneRequestData
+      })
+    })
+    .catch((error) => {
+      const retrySeconds = 10
+      console.error(`Unable to fetch data from backend. Will retry in ${retrySeconds}sec. Details: ${error}`)
+      setInterval(this.fetchDataFromBackend, retrySeconds*1000)
+    })
   }
 
   handleMarkerClick = ({ event, payload, anchor }) => {
@@ -44,14 +62,16 @@ class ZonesMap extends Component {
   }
 
   render() {
-    const { zoneInformationDialog } = this.state
+    const { zoneInformationDialog, zoneRequestsData } = this.state
     const { classes } = this.props
     return (
       <div>
         <InformationDialog zoneChangeInformation={zoneInformationDialog} onClose={this.resetDialogInformation}></InformationDialog>
-        <Grid container spacing={2}>
-          <Grid item>
-            <Map center={cityOfWaterlooCoordinates} zoom={13} width={800}>
+        <Grid container direction="row" spacing={2}>
+          <Grid item className={classes.mapContainer}>
+            <Map 
+              center={cityOfWaterlooCoordinates} 
+              zoom={13}>
               {
                 zoneRequestsData.map( (element, ix) => {
                   return !!element['locationCoordinates'] && 
@@ -61,7 +81,7 @@ class ZonesMap extends Component {
               }
             </Map>
           </Grid>
-          <Grid item className={classes.unpinnedTable}>
+          <Grid item className={classes.unpinnedTableContainer}>
             <UnpinnedZoneChangeTable zoneRequestsData={zoneRequestsData} 
                                   onZoneChangeClick={this.setDialogInformation}>
             </UnpinnedZoneChangeTable>

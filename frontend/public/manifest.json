@@ -1,6 +1,6 @@
 {
-  "short_name": "React App",
-  "name": "Create React App Sample",
+  "short_name": "Waterloo Zoning",
+  "name": "Waterloo Zone Change Requests",
   "icons": [
     {
       "src": "favicon.ico",
