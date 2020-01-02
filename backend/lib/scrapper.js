@@ -22,11 +22,7 @@ const frame = {
     }
 }
 
-const isMinifiedGoogleMapsUrl = (url) => {
-    return url.startsWith("https://goo.gl/maps/")
-}
-
-const extractLocationCoordinates = async(minifiedGMapsUrl) => {
+const extractLocationCoordinates = (minifiedGMapsUrl) => {
     return new Promise( (resolve, reject) => {
         request(minifiedGMapsUrl, function(error,response,html) {
             if (!error && response.statusCode == 200) {

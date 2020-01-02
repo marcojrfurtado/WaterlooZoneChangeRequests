@@ -1,0 +1,48 @@
+[
+    {
+      "applicant": "Doug Owen Construction Ltd.",
+      "ward": "Northwest, Ward 2",
+      "staffContactName": "Joel Cotter",
+      "staffContactEmail": "mailto:%20joel.cotter@waterloo.ca",
+      "locationName": "Wideman Road",
+      "id": "wideman",
+      "detailsUrl": "https://www.waterloo.ca/en/government/zone-changes.aspx#wideman"
+    },
+    {
+      "applicant": "Woolwich Estates Ltd.",
+      "ward": "Southeast, Ward 5",
+      "staffContactName": "Joel Cotter",
+      "staffContactEmail": "mailto:%20joel.cotter@waterloo.ca",
+      "locationName": "Woolwich St.",
+      "id": "woolwich",
+      "detailsUrl": "https://www.waterloo.ca/en/government/zone-changes.aspx#woolwich"
+    },
+    {
+      "applicant": "IBI Group",
+      "ward": "Southeast, Ward 5",
+      "staffContactName": "Rita Szilock",
+      "staffContactEmail": "mailto:%20rita.szilock@waterloo.ca",
+      "locationName": "510 Erbsville",
+      "locationUrl": "https://goo.gl/maps/bq526mLCBPR2",
+      "id": "erbsville",
+      "detailsUrl": "https://www.waterloo.ca/en/government/zone-changes.aspx#erbsville",
+      "locationCoordinates": [
+        "43.4680925",
+        "-80.5896506"
+      ]
+    },
+    {
+      "applicant": "2115881 Ontario Limited Holding",
+      "ward": "Northwest, Ward 2",
+      "staffContactName": "Natalie Hardacre",
+      "staffContactEmail": "mailto:%20natalie.hardacre@waterloo.ca",
+      "locationName": "556, 560 and 576 Conservation Dr.",
+      "locationUrl": "https://goo.gl/maps/VM7iMwN3QGz",
+      "id": "conservation",
+      "detailsUrl": "https://www.waterloo.ca/en/government/zone-changes.aspx#conservation",
+      "locationCoordinates": [
+        "43.486444",
+        "-80.593864"
+      ]
+    }
+  ]

@@ -1,4 +1,4 @@
-const zoneChanges = require('../lib/waterlooZoneChanges')
+const zoneChanges = require('../lib/scrapper')
 zoneChanges.getZoneChangeRequests().then( (result) => {
     console.log(JSON.stringify(result))
 }).catch( (error) => {
